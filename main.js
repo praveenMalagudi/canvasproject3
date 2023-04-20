@@ -1,7 +1,6 @@
 const canvas = document.getElementById('canvas');
 const c = canvas.getContext('2d');
 const radius = 30;
-function lines(){
 c.strokeStyle = 'black';
 c.lineWidth = 1;
 c.beginPath();
@@ -13,8 +12,6 @@ c.beginPath();
 c.moveTo(0, canvas.height / 2);
 c.lineTo(canvas.width, canvas.height / 2);
 c.stroke();
-}
-lines();
 function drawCircle(x, y) {
   c.beginPath();
   c.fillStyle = 'transparent';
@@ -43,5 +40,15 @@ canvas.addEventListener('mousemove', (event) => {
   mirrorCircle(canvas.width - x, y, X, Y);
   mirrorCircle(x, canvas.height - y, X, Y);
   mirrorCircle(canvas.width - x, canvas.height - y, X, Y);
-  lines();
+  c.strokeStyle = 'black';
+  c.lineWidth = 1;
+  c.beginPath();
+  c.moveTo(canvas.width / 2, 0);
+  c.lineTo(canvas.width / 2, canvas.height);
+  c.stroke();
+  
+  c.beginPath();
+  c.moveTo(0, canvas.height / 2);
+  c.lineTo(canvas.width, canvas.height / 2);
+  c.stroke();
 });
