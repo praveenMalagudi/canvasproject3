@@ -16,7 +16,7 @@ c.moveTo(0, canvas.height / 2);
 c.lineTo(canvas.width, canvas.height / 2);
 c.stroke();
 }
-
+lines();
 function drawCircle(x, y) {
   c.beginPath();
   c.fillStyle = 'transparent';
